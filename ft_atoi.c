@@ -10,34 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	get_num(char *str, int i, int neg)
 {
-	int	i;
-	int	neg;
 	int	num;
 
 	num = 0;
-	i = 0;
-	neg = 1;
-	if (str == "-2147483648")
-	{
-		return (-2147483648);
-	}
-	while (str[i])
-	{
-		if (str[i] == '\r' || str[i] == '\n' || str[i] == '\f' )
-			i++;
-		if (str[i] == '\v' || str[i] == '\t' || str[i] == ' ' )
-			i++;
-		else
-			break ;
-	}
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			neg = -1;
-		i++;
-	}
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')
@@ -49,4 +26,37 @@ int	ft_atoi(char *str)
 			break ;
 	}
 	return (num * neg);
+}
+
+int	check_space(char *c, int i)
+{
+	while (c[i])
+	{
+		if (c[i] == '\r' || c[i] == '\n' || c[i] == '\f' )
+			i++;
+		else if (c[i] == '\v' || c[i] == '\t' || c[i] == ' ' )
+			i++;
+		else
+			break ;
+	}
+	return (i);
+}
+
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	neg;
+
+	i = 0;
+	neg = 1;
+	if (str == "-2147483648")
+		return (-2147483648);
+	i = check_space(str, i);
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			neg = -1;
+		i++;
+	}
+	return (get_num(str, i, neg));
 }
