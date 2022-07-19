@@ -2,7 +2,7 @@
 #include "ft_toupper.c"
 int	main(void)
 {
-	char ch = 'y';
-	printf("%c",ft_toupper(ch));
+	char c = 'y';
+	printf("%c",ft_toupper(c));
 	return (0);
 }
