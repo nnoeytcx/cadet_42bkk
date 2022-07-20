@@ -6,21 +6,14 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 23:54:57 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/06 23:54:57 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/20 14:51:17 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char *str)
+int	ft_isalnum(int argument)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z')
-			&& (str[i] < '0' || str[i] > '9'))
-			return (0);
-		i++;
-	}
+	if ((argument < 'a' || argument > 'z') && (argument < 'A' || argument > 'Z')
+		&& (argument < '0' || argument > '9'))
+		return (0);
 	return (1);
 }

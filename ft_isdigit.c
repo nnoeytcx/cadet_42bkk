@@ -6,20 +6,13 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 23:38:21 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/06 23:38:21 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/20 14:46:20 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int arg)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
-	}
+	if (arg < '0' || arg > '9')
+		return (0);
 	return (1);
 }

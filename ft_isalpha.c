@@ -6,20 +6,14 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 01:39:16 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/05 01:39:16 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/20 14:58:49 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int argument)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-			return (0);
-		i++;
-	}
+	if ((argument < 'a' || argument > 'z')
+		&& (argument < 'A' || argument > 'Z'))
+		return (0);
 	return (1);
 }
