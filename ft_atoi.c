@@ -6,11 +6,11 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 01:20:05 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/05 01:20:05 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/20 14:09:09 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	get_num(char *str, int i, int neg)
+int	get_num(char *str, int i)
 {
 	int	num;
 
@@ -25,7 +25,7 @@ int	get_num(char *str, int i, int neg)
 		else
 			break ;
 	}
-	return (num * neg);
+	return (num);
 }
 
 int	check_space(char *c, int i)
@@ -49,8 +49,6 @@ int	ft_atoi(char *str)
 
 	i = 0;
 	neg = 1;
-	if (str == "-2147483648")
-		return (-2147483648);
 	i = check_space(str, i);
 	if (str[i] == '+' || str[i] == '-')
 	{
@@ -58,5 +56,5 @@ int	ft_atoi(char *str)
 			neg = -1;
 		i++;
 	}
-	return (get_num(str, i, neg));
+	return (get_num(str, i) * neg);
 }
