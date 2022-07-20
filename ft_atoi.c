@@ -6,11 +6,11 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 01:20:05 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/20 14:09:09 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/20 14:12:47 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	get_num(char *str, int i)
+int	get_num(const char *str, int i)
 {
 	int	num;
 
@@ -28,7 +28,7 @@ int	get_num(char *str, int i)
 	return (num);
 }
 
-int	check_space(char *c, int i)
+int	check_space(const char *c, int i)
 {
 	while (c[i])
 	{
@@ -42,7 +42,7 @@ int	check_space(char *c, int i)
 	return (i);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	neg;
