@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 23:16:39 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/21 14:02:33 by tpoungla         ###   ########.fr       */
+/*   Created: 2022/07/20 19:43:20 by tpoungla          #+#    #+#             */
+/*   Updated: 2022/07/21 13:55:21 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
-{
-	int	i;
+#include <stdlib.h>
 
-	i = 0;
-	while (s[i])
+char	*ft_strchr(const char *str, int c)
+{
+	char	*ptr;
+
+	ptr = NULL;
+	while (str)
 	{
-		i++;
+		if (*str == c)
+		{
+			ptr = (char *)str;
+			return (ptr);
+		}
+		str++;
 	}
-	return (i);
+	return (ptr);
 }
