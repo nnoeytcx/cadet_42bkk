@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 19:16:58 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/21 14:45:07 by tpoungla         ###   ########.fr       */
+/*   Created: 2022/07/21 14:57:02 by tpoungla          #+#    #+#             */
+/*   Updated: 2022/07/21 15:48:09 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, int n)
-{
-	int	i;
+#include <stdlib.h>
 
-	i = 0;
-	while (s1[i] && i < n)
+char	*ft_strrchr(const char *str, int c)
+{
+	char	*ptr;
+
+	ptr = NULL;
+	while (*str)
 	{
-		if (s1[i] < s2[i])
-			return (-1);
-		if (s1[i] > s2[i])
-			return (1);
-		i++;
+		if (*str == c)
+		{
+			ptr = (char *)str;
+		}
+		str++;
 	}
-	if (i < n && s2[i])
-		return (-1);
-	return (0);
+	return (ptr);
 }
