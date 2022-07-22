@@ -6,17 +6,19 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 21:14:55 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/04 21:14:55 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/22 23:24:15 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 
-int	ft_strlen(char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 
+	if (*s == '\0')
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
