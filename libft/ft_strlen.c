@@ -6,11 +6,11 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 23:16:39 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/22 19:25:25 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/23 04:52:40 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strlen(const char *s)
 {

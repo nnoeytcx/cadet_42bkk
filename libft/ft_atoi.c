@@ -6,9 +6,11 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 01:20:05 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/20 14:12:47 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/23 04:54:04 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	get_num(const char *str, int i)
 {

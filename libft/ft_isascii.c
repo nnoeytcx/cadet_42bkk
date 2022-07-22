@@ -6,9 +6,11 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:16:21 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/20 17:34:23 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/23 04:48:41 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int argument)
 {
