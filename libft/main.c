@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ft_strncmp.c"
+#include "libft.h"
 int	main(void)
 {
 	char *str1 = "vyihn";
