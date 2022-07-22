@@ -6,14 +6,18 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 23:16:39 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/21 14:02:33 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/22 19:25:25 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	ft_strlen(const char *s)
 {
 	int	i;
 
+	if (*s == '\0')
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
