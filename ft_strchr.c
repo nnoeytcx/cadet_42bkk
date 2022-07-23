@@ -6,7 +6,7 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:43:20 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/23 04:52:32 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/23 10:00:06 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	while (*str)
-	{
-		if (*str == c)
-		{
-			return ((char *)str);
-		}
+	while (*str != '\0' && *str != (char) c)
 		str++;
-	}
-	return (NULL);
+	if (*str == (char) c)
+		return ((char *)str);
+	return (0);
 }

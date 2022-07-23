@@ -6,7 +6,7 @@
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 20:47:28 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/07/23 08:49:08 by tpoungla         ###   ########.fr       */
+/*   Updated: 2022/07/23 09:37:47 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *str, int c);
-char	ft_tolower(int c);
-char	ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 #endif
