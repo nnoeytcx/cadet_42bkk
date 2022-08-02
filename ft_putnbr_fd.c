@@ -28,7 +28,7 @@ void	ft_putnbr_fd(int n, int fd)
 		s *= 10;
 	while (n >= 0)
 	{
-		write(fd, n / s + '0', 1);
+		ft_putchar_fd(n / s + '0', fd);
 		n -= (n / s) * s;
 		s /= 10;
 	}
