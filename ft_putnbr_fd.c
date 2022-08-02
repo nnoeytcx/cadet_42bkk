@@ -12,24 +12,24 @@
 
 #include "libft.h"
 
-void	ft_putnbr(int nbr, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int	s;
 
 	s = 1;
-	if (nbr == -2147483648)
+	if (n == -2147483648)
 		write(fd, "-2147483648", 11);
-	if (nbr < 0)
+	if (n < 0)
 	{
 		write(fd, "-", 1);
-		nbr *= -1;
+		n *= -1;
 	}
-	while (nbr / s >= 10 && nbr / s > 0)
+	while (n / s >= 10 && n / s > 0)
 		s *= 10;
-	while (nbr >= 0)
+	while (n >= 0)
 	{
-		write(fd, nbr / s + '0', 1);
-		nbr -= (nbr / s) * s;
+		write(fd, n / s + '0', 1);
+		n -= (n / s) * s;
 		s /= 10;
 	}
 }
