@@ -41,6 +41,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	getlen(int n);
 char	*ft_itoa(int n);
-char	*strdup(const char *s);
+char	*ft_strdup(const char *s);
 
 #endif
