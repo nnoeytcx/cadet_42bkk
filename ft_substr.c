@@ -23,7 +23,7 @@ char	*ft_substr(char const *str, unsigned int pos, size_t len)
 		return (0);
 	i = pos;
 	j = 0;
-	while (str[i] && j < len)
+	while (str[i] && j < len && i < (unsigned int)ft_strlen(str))
 		sub[j++] = str[i++];
 	sub[j] = '\0';
 	return (sub);
