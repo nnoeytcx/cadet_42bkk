@@ -14,22 +14,17 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	s;
+	char	i;
+	long	num;
 
-	s = 1;
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	if (n < 0)
+	num = (long)n;
+	if (num < 0)
 	{
 		write(fd, "-", 1);
-		n *= -1;
+		num *= -1;
 	}
-	while (n / s >= 10 && n / s > 0)
-		s *= 10;
-	while (n >= 0)
-	{
-		ft_putchar_fd(n / s + '0', fd);
-		n -= (n / s) * s;
-		s /= 10;
-	}
+	if (n >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	i = (num % 10) + '0';
+	write(fd, &i, 1);
 }
