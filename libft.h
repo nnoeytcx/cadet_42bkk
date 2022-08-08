@@ -43,5 +43,6 @@ size_t	getlen(int n);
 char	*ft_itoa(int n);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *str, unsigned int pos, size_t len);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
