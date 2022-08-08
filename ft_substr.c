@@ -17,20 +17,13 @@ char	*ft_substr(char const *str, unsigned int pos, size_t len)
 	char	*sub;
 	size_t	i;
 	size_t	j;
-	size_t	newlen;
 
-	if (pos > (unsigned int)ft_strlen(str))
-		newlen = 0;
-	else if (((unsigned int)ft_strlen(str) - pos) >= len)
-		newlen = len;
-	else
-		newlen = (unsigned int)ft_strlen(str) - pos;
-	sub = (char *)malloc(sizeof(char) * (newlen + 1));
-	if (!sub)
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub || !str)
 		return (0);
 	i = pos;
 	j = 0;
-	while (j < newlen)
+	while (str[i] && j < len)
 		sub[j++] = str[i++];
 	sub[j] = '\0';
 	return (sub);
