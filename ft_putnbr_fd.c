@@ -27,7 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 		num *= -1;
 	}
-	if (n >= 10)
+	if (num >= 10)
 		ft_putnbr_fd(num / 10, fd);
 	i = (num % 10) + '0';
 	write(fd, &i, 1);
