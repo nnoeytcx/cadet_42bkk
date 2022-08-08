@@ -42,6 +42,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	getlen(int n);
 char	*ft_itoa(int n);
 char	*ft_strdup(const char *s);
-char	*ft_substr(char const *str, unsigned int pos, size_t len);
+//char	*ft_substr(char const *str, unsigned int pos, size_t len);
 
 #endif
