@@ -19,12 +19,12 @@ char	*ft_substr(char const *str, unsigned int pos, size_t len)
 	size_t	j;
 	size_t	newlen;
 
-	if (pos > ft_strlen(str))
+	if (pos > (unsigned int)ft_strlen(str))
 		newlen = 0;
-	else if ((ft_strlen(str) - pos) >= len)
+	else if (((unsigned int)ft_strlen(str) - pos) >= len)
 		newlen = len;
 	else
-		newlen = ft_strlen(str) - pos;
+		newlen = (unsigned int)ft_strlen(str) - pos;
 	sub = (char *)malloc(sizeof(char) * (newlen + 1));
 	if (!sub)
 		return (0);
