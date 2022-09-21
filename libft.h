@@ -47,5 +47,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *b, size_t len);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
