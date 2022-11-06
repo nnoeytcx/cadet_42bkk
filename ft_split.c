@@ -88,10 +88,5 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	ft_get_tab(s, c, res);
 	ft_get_str(s, c, res);
-	while (res)
-	{
-		printf("%s\n",*res);
-		res++;
-	}
 	return (res);
 }
