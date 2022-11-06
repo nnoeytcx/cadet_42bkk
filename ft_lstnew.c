@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 22:05:42 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/08/05 22:05:42 by tpoungla         ###   ########.fr       */
+/*   Created: 2022/11/07 03:47:27 by tpoungla          #+#    #+#             */
+/*   Updated: 2022/11/07 03:47:27 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	size_t	start;
+	t_list	*res;
 
-	i = (size_t)ft_strlen(dst);
-	if (i >= size)
-		return (size + ft_strlen(src));
-	start = i;
-	if (size != 0)
-	{
-		while (i < size - 1 && src[i - start])
-		{
-			dst[i] = src[i - start];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	return (start + ft_strlen(src));
+	res = malloc (sizeof(t_list));
+	if (!res)
+		return (NULL);
+	res -> content = content;
+	res -> next = NULL;
+	return (res);
 }

@@ -31,6 +31,7 @@ SRCSB = ft_lstlast.c\
 		 ft_lstsize.c\
 		 ft_lstadd_back.c\
 		 ft_lstadd_front.c\
+		 ft_lstnew.c\
 		
 OBJS := $(SRCS:.c=.o)
 OBJSB := $(SRCSB:.c=.o)

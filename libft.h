@@ -67,5 +67,6 @@ void	ft_get_tab(char const *s, char c, char **res);
 char	**ft_split(char const *s, char c);
 int		if_trim(char const *set, char c);
 char	*ft_strtrim(char const *s1, char const *set);
+t_list	*ft_lstnew(void *content);
 
 #endif
