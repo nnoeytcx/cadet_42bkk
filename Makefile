@@ -30,7 +30,7 @@ $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
 bonus: $(NAME): $(OBJSB)
-	ar -rcs $(NAME) $(OBJSB)
+		ar -rcs $(NAME) $(OBJSB)
 
 clean:
 	rm -f $(OBJS) $(OBJSB)
