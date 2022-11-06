@@ -75,6 +75,8 @@ char	**ft_split(char const *s, char c)
 
 	co = 0;
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
