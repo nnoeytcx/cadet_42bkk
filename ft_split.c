@@ -36,6 +36,7 @@ void	ft_get_str(char const *s, char c, char **res)
 			m++;
 			n = 0;
 		}
+		i++;
 	}
 	res[m] = NULL;
 }
@@ -43,26 +44,26 @@ void	ft_get_str(char const *s, char c, char **res)
 void	ft_get_tab(char const *s, char c, char **res)
 {
 	int	i;
-	int	j;
-	int	k;
+	int	m;
+	int	n;
 
-	k = 0;
+	n = 0;
+	m = 0;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
+		if (s[i] != c && s[i])
+			n++;
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
-			j = i;
-			while (s[j])
+			res[m] = malloc(sizeof(char) * (n + 1));
+			if (!res[m])
 			{
-				if (s[j] != c)
-					j++;
-				else
-					break ;
+				while (res[m])
+					free(res[m--]);
 			}
-			res[k] = malloc(sizeof(char) * (j - i + 1));
-			k++;
-			i = j;
+			m++;
+			n = 0;
 		}
 		i++;
 	}
@@ -87,5 +88,10 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	ft_get_tab(s, c, res);
 	ft_get_str(s, c, res);
+	while (res)
+	{
+		printf("%s\n",*res);
+		res++;
+	}
 	return (res);
 }
