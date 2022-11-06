@@ -5,34 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/21 14:15:05 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/09/21 14:15:05 by tpoungla         ###   ########.fr       */
+/*   Created: 2022/11/06 21:57:52 by tpoungla          #+#    #+#             */
+/*   Updated: 2022/11/06 21:57:52 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "libft.h"
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strndup(char const *s, int i, int j)
+void	ft_get_str(char const *s, char c, char **res)
 {
-	char	*res;
-	size_t	k;
+	int	i;
+	int	m;
+	int	n;
 
-	k = 0;
-	res = malloc(sizeof(char) * j - i + 1);
-	if (!res)
-		return (0);
-	while (i <= j)
+	i = 0;
+	m = 0;
+	n = 0;
+	while (s[i])
 	{
-		res[k] = s[i];
-		i++;
-		k++;
+		if (s[i] != c && s[i])
+		{
+			res[m][n] = s[i];
+			n++;
+		}
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+		{
+			res[m][n] = '\0';
+			m++;
+			n = 0;
+		}
 	}
-	return (res);
+	res[m] = NULL;
 }
 
-void	ft_get_str(char const *s, char c, char **res)
+void	ft_get_tab(char const *s, char c, char **res)
 {
 	int	i;
 	int	j;
@@ -52,7 +60,7 @@ void	ft_get_str(char const *s, char c, char **res)
 				else
 					break ;
 			}
-			res[k] = ft_strndup(s, i, j - 1);
+			res[k] = malloc(sizeof(char) * (j - i + 1));
 			k++;
 			i = j;
 		}
@@ -74,14 +82,10 @@ char	**ft_split(char const *s, char c)
 			co++;
 		i++;
 	}
-	res = malloc(sizeof(char *) * (co + 1));
+	res = (char **)malloc(sizeof(char *) * (co + 1));
 	if (!res)
 		return (NULL);
+	ft_get_tab(s, c, res);
 	ft_get_str(s, c, res);
-	while (res)
-	{
-		printf("%s\n",*res);
-		res++;
-	}
 	return (res);
 }
