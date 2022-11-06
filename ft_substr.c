@@ -19,6 +19,8 @@ char	*ft_substr(char const *str, unsigned int pos, size_t len)
 	size_t	j;
 	size_t	slen;
 
+	if (str == NULL)
+		return (NULL);
 	if ((int)pos > ft_strlen(str))
 		slen = 0;
 	else if ((ft_strlen(str) - pos) >= len)
@@ -26,7 +28,7 @@ char	*ft_substr(char const *str, unsigned int pos, size_t len)
 	else
 		slen = ft_strlen(str) - pos;
 	sub = (char *)malloc(sizeof(char) * (slen + 1));
-	if (!sub)
+	if (!sub || sub == NULL)
 		return (0);
 	i = pos;
 	j = 0;
