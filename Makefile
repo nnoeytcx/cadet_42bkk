@@ -6,10 +6,10 @@
 #    By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/23 05:00:19 by tpoungla          #+#    #+#              #
-#    Updated: 2022/07/23 09:08:15 by tpoungla         ###   ########.fr        #
-#    Updated: 2022/07/23 07:40:21 by tpoungla         ###   ########.fr        #
+#    Updated: 2022/12/16 03:42:17 by tpoungla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = libft.a
 
@@ -32,9 +32,10 @@ SRCSB = ft_lstlast.c\
 		 ft_lstadd_back.c\
 		 ft_lstadd_front.c\
 		 ft_lstnew.c\
-		 ft_lstclear.c\
 		 ft_lstdelone.c\
 		 ft_lstiter.c\
+		 ft_lstclear.c\
+		 ft_lstmap.c\
 		
 OBJS := $(SRCS:.c=.o)
 OBJSB := $(SRCSB:.c=.o)
